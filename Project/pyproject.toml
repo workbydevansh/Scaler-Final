@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-supportops-x-env"
+version = "0.1.0"
+description = "SupportOps-X, a multi-agent customer support escalation environment for OpenEnv."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core[core]>=0.2.3",
+    "pydantic>=2.8",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "matplotlib>=3.8",
+]
+training = [
+    "datasets>=2.20",
+    "trl>=0.25",
+    "unsloth",
+    "transformers>=4.51",
+    "accelerate>=1.0",
+    "jmespath>=1.0",
+]
+
+[project.scripts]
+server = "supportops_x_env.server.app:main"
+supportops-eval = "scripts.evaluate_policies:main"
+
+[tool.setuptools.packages.find]
+include = ["supportops_x_env*", "training*", "scripts*"]
+
+[tool.setuptools.package-data]
+supportops_x_env = ["openenv.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

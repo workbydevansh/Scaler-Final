@@ -1,0 +1,12 @@
+spec_version: 1
+name: supportops_x_env
+version: 0.1.0
+description: Multi-agent customer support escalation environment for OpenEnv.
+type: space
+runtime: fastapi
+app: supportops_x_env.server.app:app
+port: 8000
+action: SupportopsXAction
+observation: SupportopsXObservation
+default_image: supportops-x-env:latest
+

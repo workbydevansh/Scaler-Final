@@ -1,0 +1,305 @@
+[
+  {
+    "task_id": "damaged_refund",
+    "policy": "baseline",
+    "score": 0.25,
+    "total_reward": 0.46,
+    "steps": 4,
+    "scorecard": {
+      "opened_ticket": true,
+      "kb_required": [
+        "damaged_goods_refund"
+      ],
+      "kb_pages_viewed": [],
+      "coordination_required": [
+        "billing"
+      ],
+      "escalations": [],
+      "correct_queue": false,
+      "followup_within_sla": false,
+      "communication_quality": 0.0,
+      "correct_final_status": true,
+      "policy_violations": 0,
+      "invalid_actions": 0,
+      "repeated_actions": 0,
+      "rubric_components": {
+        "opened_ticket": 1.0,
+        "policy_retrieval": 0.0,
+        "specialist_coordination": 0.0,
+        "queue_assignment": 0.0,
+        "sla_followup": 0.0,
+        "customer_communication": 0.0,
+        "final_status": 1.0,
+        "safety": 1.0
+      },
+      "rubric_weights": {
+        "opened_ticket": 0.1,
+        "policy_retrieval": 0.15,
+        "specialist_coordination": 0.2,
+        "queue_assignment": 0.15,
+        "sla_followup": 0.1,
+        "customer_communication": 0.15,
+        "final_status": 0.1,
+        "safety": 0.05
+      },
+      "rubric_penalty": 0.0,
+      "rubric_weighted_score": 0.25,
+      "normalized_score": 0.25
+    }
+  },
+  {
+    "task_id": "account_takeover",
+    "policy": "baseline",
+    "score": 0.15,
+    "total_reward": 0.11,
+    "steps": 4,
+    "scorecard": {
+      "opened_ticket": true,
+      "kb_required": [
+        "account_takeover_policy"
+      ],
+      "kb_pages_viewed": [],
+      "coordination_required": [
+        "security"
+      ],
+      "escalations": [],
+      "correct_queue": false,
+      "followup_within_sla": false,
+      "communication_quality": 0.0,
+      "correct_final_status": false,
+      "policy_violations": 0,
+      "invalid_actions": 0,
+      "repeated_actions": 0,
+      "rubric_components": {
+        "opened_ticket": 1.0,
+        "policy_retrieval": 0.0,
+        "specialist_coordination": 0.0,
+        "queue_assignment": 0.0,
+        "sla_followup": 0.0,
+        "customer_communication": 0.0,
+        "final_status": 0.0,
+        "safety": 1.0
+      },
+      "rubric_weights": {
+        "opened_ticket": 0.1,
+        "policy_retrieval": 0.15,
+        "specialist_coordination": 0.2,
+        "queue_assignment": 0.15,
+        "sla_followup": 0.1,
+        "customer_communication": 0.15,
+        "final_status": 0.1,
+        "safety": 0.05
+      },
+      "rubric_penalty": 0.0,
+      "rubric_weighted_score": 0.15,
+      "normalized_score": 0.15
+    }
+  },
+  {
+    "task_id": "enterprise_outage",
+    "policy": "baseline",
+    "score": 0.15,
+    "total_reward": 0.11,
+    "steps": 4,
+    "scorecard": {
+      "opened_ticket": true,
+      "kb_required": [
+        "enterprise_incident_protocol"
+      ],
+      "kb_pages_viewed": [],
+      "coordination_required": [
+        "sre",
+        "account_management"
+      ],
+      "escalations": [],
+      "correct_queue": false,
+      "followup_within_sla": false,
+      "communication_quality": 0.0,
+      "correct_final_status": false,
+      "policy_violations": 0,
+      "invalid_actions": 0,
+      "repeated_actions": 0,
+      "rubric_components": {
+        "opened_ticket": 1.0,
+        "policy_retrieval": 0.0,
+        "specialist_coordination": 0.0,
+        "queue_assignment": 0.0,
+        "sla_followup": 0.0,
+        "customer_communication": 0.0,
+        "final_status": 0.0,
+        "safety": 1.0
+      },
+      "rubric_weights": {
+        "opened_ticket": 0.1,
+        "policy_retrieval": 0.15,
+        "specialist_coordination": 0.2,
+        "queue_assignment": 0.15,
+        "sla_followup": 0.1,
+        "customer_communication": 0.15,
+        "final_status": 0.1,
+        "safety": 0.05
+      },
+      "rubric_penalty": 0.0,
+      "rubric_weighted_score": 0.15,
+      "normalized_score": 0.15
+    }
+  },
+  {
+    "task_id": "damaged_refund",
+    "policy": "expert",
+    "score": 1.0,
+    "total_reward": 2.19,
+    "steps": 7,
+    "scorecard": {
+      "opened_ticket": true,
+      "kb_required": [
+        "damaged_goods_refund"
+      ],
+      "kb_pages_viewed": [
+        "damaged_goods_refund"
+      ],
+      "coordination_required": [
+        "billing"
+      ],
+      "escalations": [
+        "billing"
+      ],
+      "correct_queue": true,
+      "followup_within_sla": true,
+      "communication_quality": 1.0,
+      "correct_final_status": true,
+      "policy_violations": 0,
+      "invalid_actions": 0,
+      "repeated_actions": 0,
+      "rubric_components": {
+        "opened_ticket": 1.0,
+        "policy_retrieval": 1.0,
+        "specialist_coordination": 1.0,
+        "queue_assignment": 1.0,
+        "sla_followup": 1.0,
+        "customer_communication": 1.0,
+        "final_status": 1.0,
+        "safety": 1.0
+      },
+      "rubric_weights": {
+        "opened_ticket": 0.1,
+        "policy_retrieval": 0.15,
+        "specialist_coordination": 0.2,
+        "queue_assignment": 0.15,
+        "sla_followup": 0.1,
+        "customer_communication": 0.15,
+        "final_status": 0.1,
+        "safety": 0.05
+      },
+      "rubric_penalty": 0.0,
+      "rubric_weighted_score": 1.0,
+      "normalized_score": 1.0
+    }
+  },
+  {
+    "task_id": "account_takeover",
+    "policy": "expert",
+    "score": 0.97,
+    "total_reward": 2.13,
+    "steps": 7,
+    "scorecard": {
+      "opened_ticket": true,
+      "kb_required": [
+        "account_takeover_policy"
+      ],
+      "kb_pages_viewed": [
+        "account_takeover_policy"
+      ],
+      "coordination_required": [
+        "security"
+      ],
+      "escalations": [
+        "security"
+      ],
+      "correct_queue": true,
+      "followup_within_sla": true,
+      "communication_quality": 0.8,
+      "correct_final_status": true,
+      "policy_violations": 0,
+      "invalid_actions": 0,
+      "repeated_actions": 0,
+      "rubric_components": {
+        "opened_ticket": 1.0,
+        "policy_retrieval": 1.0,
+        "specialist_coordination": 1.0,
+        "queue_assignment": 1.0,
+        "sla_followup": 1.0,
+        "customer_communication": 0.8,
+        "final_status": 1.0,
+        "safety": 1.0
+      },
+      "rubric_weights": {
+        "opened_ticket": 0.1,
+        "policy_retrieval": 0.15,
+        "specialist_coordination": 0.2,
+        "queue_assignment": 0.15,
+        "sla_followup": 0.1,
+        "customer_communication": 0.15,
+        "final_status": 0.1,
+        "safety": 0.05
+      },
+      "rubric_penalty": 0.0,
+      "rubric_weighted_score": 0.97,
+      "normalized_score": 0.97
+    }
+  },
+  {
+    "task_id": "enterprise_outage",
+    "policy": "expert",
+    "score": 1.0,
+    "total_reward": 2.23,
+    "steps": 8,
+    "scorecard": {
+      "opened_ticket": true,
+      "kb_required": [
+        "enterprise_incident_protocol"
+      ],
+      "kb_pages_viewed": [
+        "enterprise_incident_protocol"
+      ],
+      "coordination_required": [
+        "sre",
+        "account_management"
+      ],
+      "escalations": [
+        "sre",
+        "account_management"
+      ],
+      "correct_queue": true,
+      "followup_within_sla": true,
+      "communication_quality": 1.0,
+      "correct_final_status": true,
+      "policy_violations": 0,
+      "invalid_actions": 0,
+      "repeated_actions": 0,
+      "rubric_components": {
+        "opened_ticket": 1.0,
+        "policy_retrieval": 1.0,
+        "specialist_coordination": 1.0,
+        "queue_assignment": 1.0,
+        "sla_followup": 1.0,
+        "customer_communication": 1.0,
+        "final_status": 1.0,
+        "safety": 1.0
+      },
+      "rubric_weights": {
+        "opened_ticket": 0.1,
+        "policy_retrieval": 0.15,
+        "specialist_coordination": 0.2,
+        "queue_assignment": 0.15,
+        "sla_followup": 0.1,
+        "customer_communication": 0.15,
+        "final_status": 0.1,
+        "safety": 0.05
+      },
+      "rubric_penalty": 0.0,
+      "rubric_weighted_score": 1.0,
+      "normalized_score": 1.0
+    }
+  }
+]

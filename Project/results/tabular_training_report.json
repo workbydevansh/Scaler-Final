@@ -1,0 +1,290 @@
+{
+  "training_type": "task_conditioned_cross_entropy_rl_smoke_run",
+  "note": "Local RL smoke-run; official LLM training uses training/train_grpo.py.",
+  "before_average_score": 0.08,
+  "after_average_score": 0.9867,
+  "best_sampled_average_score": 0.99,
+  "iterations": 36,
+  "population_per_task": 120,
+  "tasks": [
+    "damaged_refund",
+    "account_takeover",
+    "enterprise_outage"
+  ],
+  "action_count": 23,
+  "trained_policy_examples": {
+    "damaged_refund": {
+      "task_id": "damaged_refund",
+      "score": 0.99,
+      "total_reward": 2.07,
+      "steps": 8,
+      "trajectory": [
+        {
+          "metadata": {},
+          "action_type": "escalate",
+          "target": "billing"
+        },
+        {
+          "metadata": {},
+          "action_type": "inspect_ticket"
+        },
+        {
+          "metadata": {},
+          "action_type": "search_kb",
+          "target": "damaged_goods_refund"
+        },
+        {
+          "metadata": {},
+          "action_type": "escalate",
+          "target": "billing"
+        },
+        {
+          "metadata": {},
+          "action_type": "send_customer_reply",
+          "message": "Billing reviewed the damaged item report. Please attach a photo if available; we can proceed with a refund or replacement under policy."
+        },
+        {
+          "metadata": {},
+          "action_type": "set_followup",
+          "hours": 24
+        },
+        {
+          "metadata": {},
+          "action_type": "assign_queue",
+          "target": "billing"
+        },
+        {
+          "metadata": {},
+          "action_type": "finalize",
+          "target": "solved"
+        }
+      ],
+      "scorecard": {
+        "opened_ticket": true,
+        "kb_required": [
+          "damaged_goods_refund"
+        ],
+        "kb_pages_viewed": [
+          "damaged_goods_refund"
+        ],
+        "coordination_required": [
+          "billing"
+        ],
+        "escalations": [
+          "billing"
+        ],
+        "correct_queue": true,
+        "followup_within_sla": true,
+        "communication_quality": 1.0,
+        "correct_final_status": true,
+        "policy_violations": 0,
+        "invalid_actions": 0,
+        "repeated_actions": 1,
+        "rubric_components": {
+          "opened_ticket": 1.0,
+          "policy_retrieval": 1.0,
+          "specialist_coordination": 1.0,
+          "queue_assignment": 1.0,
+          "sla_followup": 1.0,
+          "customer_communication": 1.0,
+          "final_status": 1.0,
+          "safety": 1.0
+        },
+        "rubric_weights": {
+          "opened_ticket": 0.1,
+          "policy_retrieval": 0.15,
+          "specialist_coordination": 0.2,
+          "queue_assignment": 0.15,
+          "sla_followup": 0.1,
+          "customer_communication": 0.15,
+          "final_status": 0.1,
+          "safety": 0.05
+        },
+        "rubric_penalty": 0.01,
+        "rubric_weighted_score": 1.0,
+        "normalized_score": 0.99
+      }
+    },
+    "account_takeover": {
+      "task_id": "account_takeover",
+      "score": 0.97,
+      "total_reward": 2.13,
+      "steps": 7,
+      "trajectory": [
+        {
+          "metadata": {},
+          "action_type": "inspect_ticket"
+        },
+        {
+          "metadata": {},
+          "action_type": "escalate",
+          "target": "security"
+        },
+        {
+          "metadata": {},
+          "action_type": "search_kb",
+          "target": "account_takeover_policy"
+        },
+        {
+          "metadata": {},
+          "action_type": "send_customer_reply",
+          "message": "Security is protecting your account and reviewing verification. This case is pending and we will send a follow-up after checks complete."
+        },
+        {
+          "metadata": {},
+          "action_type": "assign_queue",
+          "target": "security"
+        },
+        {
+          "metadata": {},
+          "action_type": "set_followup",
+          "hours": 2
+        },
+        {
+          "metadata": {},
+          "action_type": "finalize",
+          "target": "pending"
+        }
+      ],
+      "scorecard": {
+        "opened_ticket": true,
+        "kb_required": [
+          "account_takeover_policy"
+        ],
+        "kb_pages_viewed": [
+          "account_takeover_policy"
+        ],
+        "coordination_required": [
+          "security"
+        ],
+        "escalations": [
+          "security"
+        ],
+        "correct_queue": true,
+        "followup_within_sla": true,
+        "communication_quality": 0.8,
+        "correct_final_status": true,
+        "policy_violations": 0,
+        "invalid_actions": 0,
+        "repeated_actions": 0,
+        "rubric_components": {
+          "opened_ticket": 1.0,
+          "policy_retrieval": 1.0,
+          "specialist_coordination": 1.0,
+          "queue_assignment": 1.0,
+          "sla_followup": 1.0,
+          "customer_communication": 0.8,
+          "final_status": 1.0,
+          "safety": 1.0
+        },
+        "rubric_weights": {
+          "opened_ticket": 0.1,
+          "policy_retrieval": 0.15,
+          "specialist_coordination": 0.2,
+          "queue_assignment": 0.15,
+          "sla_followup": 0.1,
+          "customer_communication": 0.15,
+          "final_status": 0.1,
+          "safety": 0.05
+        },
+        "rubric_penalty": 0.0,
+        "rubric_weighted_score": 0.97,
+        "normalized_score": 0.97
+      }
+    },
+    "enterprise_outage": {
+      "task_id": "enterprise_outage",
+      "score": 1.0,
+      "total_reward": 2.23,
+      "steps": 8,
+      "trajectory": [
+        {
+          "metadata": {},
+          "action_type": "escalate",
+          "target": "sre"
+        },
+        {
+          "metadata": {},
+          "action_type": "assign_queue",
+          "target": "sre"
+        },
+        {
+          "metadata": {},
+          "action_type": "inspect_ticket"
+        },
+        {
+          "metadata": {},
+          "action_type": "set_followup",
+          "hours": 1
+        },
+        {
+          "metadata": {},
+          "action_type": "search_kb",
+          "target": "enterprise_incident_protocol"
+        },
+        {
+          "metadata": {},
+          "action_type": "escalate",
+          "target": "account_management"
+        },
+        {
+          "metadata": {},
+          "action_type": "send_customer_reply",
+          "message": "We have opened an incident with SRE and looped in your account manager. The case remains pending and we will provide updates while recovery is monitored."
+        },
+        {
+          "metadata": {},
+          "action_type": "finalize",
+          "target": "pending"
+        }
+      ],
+      "scorecard": {
+        "opened_ticket": true,
+        "kb_required": [
+          "enterprise_incident_protocol"
+        ],
+        "kb_pages_viewed": [
+          "enterprise_incident_protocol"
+        ],
+        "coordination_required": [
+          "sre",
+          "account_management"
+        ],
+        "escalations": [
+          "sre",
+          "account_management"
+        ],
+        "correct_queue": true,
+        "followup_within_sla": true,
+        "communication_quality": 1.0,
+        "correct_final_status": true,
+        "policy_violations": 0,
+        "invalid_actions": 0,
+        "repeated_actions": 0,
+        "rubric_components": {
+          "opened_ticket": 1.0,
+          "policy_retrieval": 1.0,
+          "specialist_coordination": 1.0,
+          "queue_assignment": 1.0,
+          "sla_followup": 1.0,
+          "customer_communication": 1.0,
+          "final_status": 1.0,
+          "safety": 1.0
+        },
+        "rubric_weights": {
+          "opened_ticket": 0.1,
+          "policy_retrieval": 0.15,
+          "specialist_coordination": 0.2,
+          "queue_assignment": 0.15,
+          "sla_followup": 0.1,
+          "customer_communication": 0.15,
+          "final_status": 0.1,
+          "safety": 0.05
+        },
+        "rubric_penalty": 0.0,
+        "rubric_weighted_score": 1.0,
+        "normalized_score": 1.0
+      }
+    }
+  }
+}
